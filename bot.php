@@ -24,8 +24,9 @@ switch ($arrJson['events'][0]['message']['text']) {
 		$arrPostData['messages'][0]['type'] = "text";
 		$arrPostData['messages'][0]['text'] = "นี่คือรูปต้นไม้ปัจจุบันครับ";
 		$arrPostData['messages'][1]['type'] = "image";
-		$arrPostData['messages'][1]['originalContentUrl'] = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg";
-		$arrPostData['messages'][1]['previewImageUrl'] = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg";
+		$arrPostData['messages'][1]['originalContentUrl'] = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.southernliving.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_inbody_900x506%2Fpublic%2Fimage%2F2018%2F06%2Fmain%2Fgettyimages-666747504.jpg%3Fitok%3Dus2ysxoU%261529439640&q=85";
+		$arrPostData['messages'][1]['previewImageUrl'] = "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.southernliving.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_inbody_900x506%2Fpublic%2Fimage%2F2018%2F06%2Fmain%2Fgettyimages-666747504.jpg%3Fitok%3Dus2ysxoU%261529439640&q=85";
+		break;
     default:
 		$arrPostData['messages'][0]['type'] = "text";
 	  	$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
