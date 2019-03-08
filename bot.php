@@ -1,71 +1,70 @@
 <?php
-	echo "I am a bot";
-// $access_token = 'iHrKTePlPqILV/X59sGJhzuJ0pkWAm/lZrjsG6/FbioFScroH42u6LkD9D5Wg29Qm3y45yTVZMJr4Cv5OBDDMymYk16SCazYbZLBWKoqroZW3YbDFZJSQcNdbkvgFjWaUmGvLocijk9KvaklfYmKsAdB04t89/1O/w1cDnyilFU=';
-// $proxy = 'velodrome.usefixie.com:80';
-// $proxyauth = 'fixie:U0hIWNH9iS4zo5W';
+$access_token = '7ZJ9fzk7sF5LqPmrVtqWDtJ5blQu/ssTaAHfFShVgl8K3lQYHdwJBGdhRK5JCZ151b4F9bdc4ScC6wLDFGfMudU8pyC8Thjt9vTWoEwirwoPondW7lB7Bxq21DR4AzPoUV0gTC9kjuIsX5hs95epagdB04t89/1O/w1cDnyilFU=';
+$proxy = 'velodrome.usefixie.com:80';
+$proxyauth = 'fixie:U0hIWNH9iS4zo5W';
 
-// // Get POST body content
-// $content = file_get_contents('php://input');
-// // Parse JSON
-// $events = json_decode($content, true);
-// // Validate parsed JSON data
-// if (!is_null($events['events'])) {
-// 	// Loop through each event
-// 	foreach ($events['events'] as $event) {
-// 		// Reply only when message sent is in 'text' format
-// 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-// 			// Get text sent
-// 			$text = $event['message']['text'];
-// 			// Get replyToken
-// 			$replyToken = $event['replyToken'];
+// Get POST body content
+$content = file_get_contents('php://input');
+// Parse JSON
+$events = json_decode($content, true);
+// Validate parsed JSON data
+if (!is_null($events['events'])) {
+	// Loop through each event
+	foreach ($events['events'] as $event) {
+		// Reply only when message sent is in 'text' format
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			// Get text sent
+			$text = $event['message']['text'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
 
-// 			// Build message to reply back
-// 			if (stripos($text, "ที่ไหน") !== false) {
-// 				$text = "ทุก ๆ ที่น่ะแหละ";
-// 			} elseif (stripos($text, "ใคร") !== false) {
-// 				$text = "ฉันคิดว่าคุณก็รู้อยู่นะ";
-// 			} elseif (stripos($text, "หรอ") !== false) {
-// 				$text = "อืม...ใช่นะ";
-// 			} elseif (stripos($text, "สวัสดี") !== false) {
-// 				$text = "สวัสดีครับ อากาศดีนะครับ";
-// 			} elseif (stripos($text, "help") !== false) {
-// 					$text = "รองรับคำว่า ที่ไหน, ใคร, หรอ, สวัสดี, help, ค้น, หา";
-// 			} elseif (stripos($text, "ช่วยด้วย") !== false) {
-// 				$text = "รองรับคำว่า ที่ไหน, ใคร, หรอ, สวัสดี, help";
-// 			} elseif (stripos($text, "ค้น") !== false) {
-// 				$text = "ได้สิ ลองดูที่ https://www.google.co.th";
-// 			} elseif (stripos($text, "หา") !== false) {
-// 				$text = "ได้สิ ลองดูที่ https://www.google.co.th";
-// 			}
+			// Build message to reply back
+			if (stripos($text, "ที่ไหน") !== false) {
+				$text = "ทุก ๆ ที่น่ะแหละ";
+			} elseif (stripos($text, "ใคร") !== false) {
+				$text = "ฉันคิดว่าคุณก็รู้อยู่นะ";
+			} elseif (stripos($text, "หรอ") !== false) {
+				$text = "อืม...ใช่นะ";
+			} elseif (stripos($text, "สวัสดี") !== false) {
+				$text = "สวัสดีครับ อากาศดีนะครับ";
+			} elseif (stripos($text, "help") !== false) {
+					$text = "รองรับคำว่า ที่ไหน, ใคร, หรอ, สวัสดี, help, ค้น, หา";
+			} elseif (stripos($text, "ช่วยด้วย") !== false) {
+				$text = "รองรับคำว่า ที่ไหน, ใคร, หรอ, สวัสดี, help";
+			} elseif (stripos($text, "ค้น") !== false) {
+				$text = "ได้สิ ลองดูที่ https://www.google.co.th";
+			} elseif (stripos($text, "หา") !== false) {
+				$text = "ได้สิ ลองดูที่ https://www.google.co.th";
+			}
 			
 			
-// 			$messages = [
-// 				'type' => 'text',
-// 				'text' => $text
-// 			];
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
 
-// 			// Make a POST Request to Messaging API to reply to sender
-// 			$url = 'https://api.line.me/v2/bot/message/reply';
-// 			$data = [
-// 				'replyToken' => $replyToken,
-// 				'messages' => [$messages],
-// 			];
-// 			$post = json_encode($data);
-// 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
-// 			$ch = curl_init($url);
-// 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-// 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-// 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-// 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-// 			curl_setopt($ch, CURLOPT_PROXY, $proxy);
-// 			curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
-// 			$result = curl_exec($ch);
-// 			curl_close($ch);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($ch, CURLOPT_PROXY, $proxy);
+			curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
+			$result = curl_exec($ch);
+			curl_close($ch);
 
-// 			echo $result . "\r\n";
-// 		}
-// 	}
-// }
-// echo "OK";
+			echo $result . "\r\n";
+		}
+	}
+}
+echo "OK";
