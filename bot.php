@@ -16,15 +16,16 @@ $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
 switch ($arrJson['events'][0]['message']['text']) {
     case "รับแจ้งเตือน":
 		$arrPostData['messages'][0]['type'] = "text";
-		$arrPostData['messages'][0]['text'] = "สวัสดี ID ".$arrJson['events'][0]['source']['userId'];
+		$arrPostData['messages'][0]['text'] = "สวัสดีครับ ID ".$arrJson['events'][0]['source']['userId'];
 		$arrPostData['messages'][1]['type'] = "text";
 		$arrPostData['messages'][1]['text'] = "รับแจ้งเตือนแล้วครับ";
         break;
-    case "ดูรูปต้นไม้":
-		$arrPostData['messages'][0]['type'] = "image";
-		$arrPostData['messages'][0]['originalContentUrl'] = "http://infarm.oasys-lab.com/scripts/jsonfile/current_image.jpg";
-		$arrPostData['messages'][0]['previewImageUrl'] = "http://infarm.oasys-lab.com/scripts/jsonfile/current_image.jpg";
-        break;
+	case "ดูรูปต้นไม้":
+		$arrPostData['messages'][0]['type'] = "text";
+		$arrPostData['messages'][0]['text'] = "นี่คือรูปต้นไม้ปัจจุบันครับ";
+		$arrPostData['messages'][1]['type'] = "image";
+		$arrPostData['messages'][1]['originalContentUrl'] = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg";
+		$arrPostData['messages'][1]['previewImageUrl'] = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg";
     default:
 		$arrPostData['messages'][0]['type'] = "text";
 	  	$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
