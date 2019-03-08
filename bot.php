@@ -20,13 +20,13 @@ switch ($arrJson['events'][0]['message']['text']) {
 		$arrPostData['messages'][1]['type'] = "text";
 		$arrPostData['messages'][1]['text'] = "รับแจ้งเตือนแล้วครับ";
         break;
-	case "ดูรูปต้นไม้":
-		$arrPostData['messages'][0]['type'] = "text";
-		$arrPostData['messages'][0]['text'] = "นี่คือรูปต้นไม้ปัจจุบันครับ";
-		$arrPostData['messages'][1]['type'] = "image";
-		$arrPostData['messages'][1]['originalContentUrl'] = "http://infarm.oasys-lab.com/scripts/jsonfile/current_image.jpg";
-		$arrPostData['messages'][1]['previewImageUrl'] = "http://infarm.oasys-lab.com/scripts/jsonfile/current_image.jpg";
-		break;
+	// case "ดูรูปต้นไม้":
+	// 	$arrPostData['messages'][0]['type'] = "text";
+	// 	$arrPostData['messages'][0]['text'] = "นี่คือรูปต้นไม้ปัจจุบันครับ";
+	// 	$arrPostData['messages'][1]['type'] = "image";
+	// 	$arrPostData['messages'][1]['originalContentUrl'] = "http://infarm.oasys-lab.com/scripts/jsonfile/current_image.jpg";
+	// 	$arrPostData['messages'][1]['previewImageUrl'] = "http://infarm.oasys-lab.com/scripts/jsonfile/current_image.jpg";
+	// 	break;
     default:
 		$arrPostData['messages'][0]['type'] = "text";
 	  	$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
