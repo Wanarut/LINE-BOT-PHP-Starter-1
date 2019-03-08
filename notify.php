@@ -13,10 +13,11 @@ $arrPostData['to'] = "Ub08e567470fdd7c3bdfcce20a7c2a847";
 $arrPostData['messages'][0]['type'] = "text";
 
 $dataUrl = "https://api.netpie.io/feed/73DataFeed?apikey=n9zeDLtDEpPJBQX1ekpTs0kmjwu3pD1H&granularity=10seconds&since=24hours&filter=Illuminance,Moisture";
-$datasource = file_get_contents($dataUrl);
+$json = file_get_contents($dataUrl);
+$datasource = json_decode($json, true);
 $light_value = $datasource["lastest_data"][1]["values"][0][1];
-$arrPostData['messages'][0]['text'] = $light_value;
- 
+$arrPostData['messages'][0]['text'] = "ค่าแสงตอนนี้ = ".$light_value;
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
