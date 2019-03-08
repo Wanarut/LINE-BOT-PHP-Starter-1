@@ -10,8 +10,93 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
  
 $arrPostData = array();
 $arrPostData['to'] = "Ub08e567470fdd7c3bdfcce20a7c2a847";
-$arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
+// $arrPostData['messages'][0]['type'] = "text";
+// $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
+$arrPostData['messages'][0] = {
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/9a16747d-9812-4726-b146-9fbb7349fcfa/d9h6vp5-a8747874-acbe-4946-a1f8-fa83e851cea3.jpg/v1/fill/w_894,h_894,q_70,strp/thirsty_plant_by_rflaae_d9h6vp5-pre.jpg",
+      "size": "full",
+      "aspectRatio": "20:11",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": "https://linecorp.com"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "md",
+      "action": {
+        "type": "uri",
+        "uri": "https://linecorp.com"
+      },
+      "contents": [
+        {
+          "type": "text",
+          "text": "หิวน้ำแล้วครับ",
+          "size": "xl",
+          "weight": "bold"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "icon",
+                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_regular_32.png"
+                },
+                {
+                  "type": "text",
+                  "text": "Soil Moisture ",
+                  "weight": "bold",
+                  "margin": "sm",
+                  "flex": 0
+                },
+                {
+                  "type": "text",
+                  "text": "50",
+                  "weight": "bold",
+                  "margin": "sm",
+                  "flex": 0
+                },
+                {
+                  "type": "text",
+                  "text": " %",
+                  "weight": "bold",
+                  "margin": "sm",
+                  "flex": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "button",
+          "style": "primary",
+          "color": "#905c44",
+          "action": {
+            "type": "uri",
+            "label": "รดน้ำ",
+            "uri": "https://www.facebook.com/AceQueasy"
+          }
+        }
+      ]
+    }
+  };
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
