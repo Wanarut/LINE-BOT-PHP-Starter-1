@@ -27,6 +27,9 @@ switch ($arrJson['events'][0]['message']['text']) {
 	// 	$arrPostData['messages'][1]['originalContentUrl'] = "http://infarm.oasys-lab.com/scripts/jsonfile/current_image.jpg";
 	// 	$arrPostData['messages'][1]['previewImageUrl'] = "http://infarm.oasys-lab.com/scripts/jsonfile/current_image.jpg";
 	// 	break;
+	case "ข้อมูลสภาพแวดล้อม":
+		$strUrl = "https://serene-reef-67841.herokuapp.com/notify.php";
+		break;
     default:
 		$arrPostData['messages'][0]['type'] = "text";
 	  	$arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
