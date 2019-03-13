@@ -12,14 +12,14 @@ $arrPostData = array();
 $arrPostData['to'] = "Ub08e567470fdd7c3bdfcce20a7c2a847";
 $arrPostData['messages'][0]['type'] = "text";
 
-$dataUrl = "https://api.netpie.io/feed/71DataFeed?apikey=n9zeDLtDEpPJBQX1ekpTs0kmjwu3pD1H&granularity=10seconds&since=24hours&filter=Illuminance,Moisture";
+$dataUrl = "https://api.netpie.io/feed/71DataFeed?apikey=9PpnmjNTfUmoPbo851aylTB1XyYPK5Lk&granularity=10seconds&since=24hours&filter=Illuminance,Moisture";
 $json = file_get_contents($dataUrl);
 $datasource = json_decode($json, true);
 $light_value = $datasource["lastest_data"][0]["values"][0][1];
 $moisture_value = $datasource["lastest_data"][1]["values"][0][1];
 $arrPostData['messages'][0]['text'] = "ID 71 แสงตอนนี้ = ".$light_value."\n\rความชื้นในดินตอนนี้ = ".$moisture_value;
 
-$dataUrl = "https://api.netpie.io/feed/72DataFeed?apikey=n9zeDLtDEpPJBQX1ekpTs0kmjwu3pD1H&granularity=10seconds&since=24hours&filter=Illuminance,Moisture";
+$dataUrl = "https://api.netpie.io/feed/72DataFeed?apikey=zgDjzrzizMvPid9a0pfVrA0u21MDYT2T&granularity=10seconds&since=24hours&filter=Illuminance,Moisture";
 $json = file_get_contents($dataUrl);
 $datasource = json_decode($json, true);
 $light_value = $datasource["lastest_data"][0]["values"][0][1];
